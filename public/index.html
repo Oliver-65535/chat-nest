@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Chat</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="user-select">
+            <button onclick="setUserType('employer')">I'm an Employer</button>
+            <button onclick="setUserType('worker')">I'm a Worker</button>
+        </div>
+        
+        <div class="chat-container" style="display: none;">
+            <div class="chat-header">
+                <h2>Job Chat</h2>
+                <span id="status-badge">Status: Connecting...</span>
+            </div>
+
+            <div class="user-info-header">
+                <div class="name" id="user-name"></div>
+                <div class="role" id="user-role"></div>
+            </div>
+            
+            <div class="messages" id="messages"></div>
+            
+            <div class="action-buttons" id="action-buttons"></div>
+            
+            <div class="input-area">
+                <input type="text" id="message-input" placeholder="Type your message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>
